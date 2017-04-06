@@ -16,6 +16,9 @@ $(document).ready
         $("#target3").addClass("animated fadeOut");
         //也可以通过jQueryremoveClass()方法去掉元素上的class。
         $("button").removeClass("btn-default");
+        //通过jQuery来改变HTML元素的CSS样式。jQuery有一个叫做.css()的方法能让你改变元素的CSS样式。
+        $("#target1").css("color", "red");//这跟通常的CSS语法有点不同，这里CSS的属性和值是在引号内的，并且用逗号分开。
+        
     }
 );
 </script>

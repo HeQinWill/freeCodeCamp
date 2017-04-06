@@ -45,6 +45,8 @@ $(document).ready
         //你已经看到了当用jQuery选择器通过id属性来选取元素的时候是多么方便，但是你不能总是写这么整齐的id。
         //jQuery 用CSS选择器来选取元素，target:nth-child(n) CSS选择器允许你按照索引顺序(从1开始)选择目标元素的所有子元素。
         $(".target:nth-child(2)").addClass("animated bounce");//给目标元素的第二个子元素添加animated和bounce class
+        //jQuery里的索引是从0开始的，也就是说：:odd 选择第2、4、6个元素，因为target#2(索引为1)，target#4(索引为3)
+        $(".target:even").addClass("animated shake");//获取class为target且索引为偶数的所有元素
     }
 );
 </script>

@@ -24,3 +24,7 @@ function()
 1. 元素type选择器：$("button")
 1. class选择器：$(".btn")
 1. id选择器：$("#target1")
+### 添加的类可以有
+1. animated
+1. shake
+1. btn-primary

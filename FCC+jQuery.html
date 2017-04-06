@@ -34,6 +34,8 @@ $(document).ready
         $("#target4").remove();
         //jQuery有一个appendTo()方法可以把选中的元素加到其他元素中。
         $("#target2").appendTo("#right-well");//把target2元素从left-well移到right-well中
+        //jQuery的clone()方法可以拷贝元素。
+        $("#target5").clone().appendTo("#left-well");//两个jQuery方法合在一起使用了？这就叫方法链function chaining，使用起来很方便。
     }
 );
 </script>

@@ -28,6 +28,7 @@ function()
 1. animated
 1. shake
 1. btn-primary
+1. hinge
 
 
 ## 通过.removeClass()方法去掉元素上的class
@@ -53,4 +54,42 @@ function()
 ## 通过.remove() 的方法可以移除HTML元素
 ```javascript
         $("#target4").remove();
+```
+## 通过.appendTo()方法可以把选中的元素加到其他元素中
+```javascript
+    $("#target2").appendTo("#right-well");//把target2元素从left-well移到right-well中
+```
+## 通过.clone()方法可以拷贝元素
+两个jQuery方法合在一起使用了？这就叫方法链function chaining，使用起来很方便。
+```javascript
+    $("#target5").clone().appendTo("#left-well");
+```
+## 访问父/子元素
+### 通过.parent()允许你访问指定元素的父元素
+让#target1元素的父元素的背景色变成红色
+```javascript
+    $("#target1").parent().css("background-color", "red")
+```
+### 通过.children()允许你访问指定元素的子元素
+让#right-well元素的所有子元素的文本颜色都变成橙色（orange）
+```javascript
+    $("#right-well").children().css("color", "orange")
+```
+## 用CSS选择器来选取元素
+你已经看到了当用jQuery选择器通过id属性来选取元素的时候是多么方便，但是你不能总是写这么整齐的id。
+### CSS选择器 target:nth-child(n) 允许你按照索引顺序(从1开始)选择目标元素的所有子元素。
+给目标元素的第二个子元素添加animated和bounce class
+```javascript
+    $(".target:nth-child(2)").addClass("animated bounce");
+```
+### 选择奇数
+jQuery里的索引是从0开始的，也就是说：:odd 选择第2、4、6个元素，因为target#2(索引为1)，target#4(索引为3)
+### 选择偶数
+获取class为target且索引为偶数的所有元素
+```javascript
+    $(".target:even").addClass("animated shake");
+```        
+## 整个body来个效果结束
+```javascript
+    $("body").addClass("animated hinge");//铰链效果
 ```

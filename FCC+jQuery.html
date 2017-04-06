@@ -38,6 +38,8 @@ $(document).ready
         //jQuery的clone()方法可以拷贝元素。
         $("#target5").clone().appendTo("#left-well");//两个jQuery方法合在一起使用了？这就叫方法链function chaining，使用起来很方便。
         */
+        //jQuery有一个方法叫parent()，它允许你访问指定元素的父元素。
+        $("#target1").parent().css("background-color", "red")//让#target1元素的父元素的背景色变成红色
     }
 );
 </script>

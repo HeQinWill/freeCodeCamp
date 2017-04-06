@@ -20,3 +20,7 @@ function()
     $("#target3").addClass("animated fadeOut");//id为target3的button元素消失,css用#
 }
 ```
+### 选择器类型
+1. 元素type选择器：$("button")
+1. class选择器：$(".btn")
+1. id选择器：$("#target1")

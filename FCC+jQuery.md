@@ -44,3 +44,13 @@ function()
     $("#target1").prop("disabled", true);
     //当你把按钮设置成不可选以后，这会让按钮变灰并且不能点击。
 ```
+## 通过.html()方法可以添加HTML标签和文字到元素，而元素之前的内容都会被方法的内容所替换掉
+```javascript
+    $("h3").html("<em>jQuery Playground</em>");
+```
+### 通过em[emphasize]标签来重写和强调标题文本的
+### 通过.text()只能改变文本但不能修改标记。只会把传进来的任何东西(包括标记)当成文本来显示。 
+## 通过.remove() 的方法可以移除HTML元素
+```javascript
+        $("#target4").remove();
+```

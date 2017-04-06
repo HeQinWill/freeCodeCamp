@@ -4,7 +4,12 @@
 $(document).ready
 (
     function() {
+        //用 $("button")来选中按钮，然后用.addClass("animated bounce")给按钮加CSS class。
         $("button").addClass("animated bounce");//要让所有的按钮做弹回效果
+        //用$(".well")来获取所有class为well的div元素。
+        //仔细想想为什么需要在well前面添加.
+        //然后使用jQuery的.addClass()方法添加2个class：animated、shake
+        $(".well").addClass("animated shake");
     }
 );
 </script>

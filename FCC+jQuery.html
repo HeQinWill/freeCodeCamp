@@ -29,7 +29,9 @@ $(document).ready
         //我们是通过em[emphasize]标签来重写和强调标题文本的：
         $("h3").html("<em>jQuery Playground</em>");
         //jQuery 还有一个类似的方法叫.text()，它只能改变文本但不能修改标记。
-        //换句话说，这个方法只会把传进来的任何东西(包括标记)当成文本来显示。
+        //换句话说，这个方法只会把传进来的任何东西(包括标记)当成文本来显示。 
+        //jQuery 有一个.remove() 的方法可以移除HTML元素
+        $("#target4").remove();
     }
 );
 </script>

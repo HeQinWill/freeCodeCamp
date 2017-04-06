@@ -32,6 +32,8 @@ $(document).ready
         //换句话说，这个方法只会把传进来的任何东西(包括标记)当成文本来显示。 
         //jQuery 有一个.remove() 的方法可以移除HTML元素
         $("#target4").remove();
+        //jQuery有一个appendTo()方法可以把选中的元素加到其他元素中。
+        $("#target2").appendTo("#right-well");//把target2元素从left-well移到right-well中
     }
 );
 </script>

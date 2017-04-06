@@ -42,6 +42,9 @@ $(document).ready
         $("#target1").parent().css("background-color", "red")//让#target1元素的父元素的背景色变成红色
         //许多HTML元素都有children(子元素)。
         $("#right-well").children().css("color", "orange")//让#right-well元素的所有子元素的文本颜色都变成橙色（orange）
+        //你已经看到了当用jQuery选择器通过id属性来选取元素的时候是多么方便，但是你不能总是写这么整齐的id。
+        //jQuery 用CSS选择器来选取元素，target:nth-child(n) CSS选择器允许你按照索引顺序(从1开始)选择目标元素的所有子元素。
+        $(".target:nth-child(2)").addClass("animated bounce");//给目标元素的第二个子元素添加animated和bounce class
     }
 );
 </script>

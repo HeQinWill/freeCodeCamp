@@ -28,3 +28,19 @@ function()
 1. animated
 1. shake
 1. btn-primary
+
+
+## 通过.removeClass()方法去掉元素上的class
+```javascript
+    $("button").removeClass("btn-default");
+```
+## 通过.css()来改变HTML元素的CSS样式
+```javascript
+    $("#target1").css("color", "red");
+    //这跟通常的CSS语法有点不同，这里CSS的属性和值是在引号内的，并且用逗号分开。
+```
+## 通过.prop()的方法让你来调整元素的属性
+```javascript
+    $("#target1").prop("disabled", true);
+    //当你把按钮设置成不可选以后，这会让按钮变灰并且不能点击。
+```

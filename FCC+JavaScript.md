@@ -267,3 +267,95 @@ console.log("Before: " + JSON.stringify(testArr));
 console.log(queue(testArr, 6)); // Modify this line to test
 console.log("After: " + JSON.stringify(testArr));
 ```
+## 一些简单的语法
+### 1. 布尔
+Boolean 值绝不会写作被引号包裹起来的形式。字符串 的 "true" 和 "false" 不是 布尔值，在 JavaScript 中也没有特殊含义。
+### 2. if 语句
+### 3. 比较
+  1   ==  1    // true  
+   1   ==  2    // false  
+   1   == '1'   // true  
+  "3"  ==  3    // true 
+
+3 === 3   // true  
+3 === '3' // false
+
+1 != 2      // true  
+1 != "1"    // false  
+1 != '1'    // false  
+1 != true   // false  
+0 != false  // false
+
+3 !== 3   // false  
+3 !== '3' // true  
+4 !== 3   // true
+
+ 5 > 3   // true  
+ 7 > '3' // true  
+ 2 > 3   // false  
+'1' > 9  // false
+
+ 6  >=  6  // true  
+ 7  >= '3' // true  
+ 2  >=  3  // false  
+'7' >=  9  // false
+
+  2 < 5  // true  
+'3' < 7  // true  
+  5 < 5  // false  
+  3 < 2  // false  
+'8' < 4  // false
+
+  4 <= 5  // true  
+'7' <= 7  // true  
+  5 <= 5  // true  
+  3 <= 2  // false  
+'8' <= 4  // false
+### 4. 逻辑与&&
+### 5. 逻辑或||
+### 6. if···else···
+### 7. if···else if···
+```js
+if (num > 15) {
+  return "Bigger than 15";
+} 
+else if (num < 5) {
+  return "Smaller than 5";
+}
+else {
+  return "Between 5 and 15";
+}
+```
+### 8. switch case
+如果你有非常多的选项需要选择，可以使用switch语句。根据不同的参数值会匹配上不同的case分支，语句会从第一个匹配的case分支开始执行，直到碰到break就结束。
+测试case 值使用严格等于，break关键字告诉javascript停止执行语句。如果没有break关键字，下一个语句会继续执行。
+```js
+switch (num) {
+  case value1:
+    statement1;
+    break;
+  case value2:
+    statement2;
+    break;
+...
+  default:
+    defaultStatement;
+}
+
+switch(val) {
+  case 1:
+  case 2:
+  case 3:
+    result = "1, 2, or 3";
+    break;
+  case 4:
+    result = "4 alone";
+}
+```
+P.S.应该'b'==="b"是true
+因为=== 总是返回 true 或 false，所以我们可以直接返回比较的结果：
+```js
+function isEqual(a,b) {
+  return a === b;
+}
+```

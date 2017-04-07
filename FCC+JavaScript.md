@@ -186,3 +186,84 @@ ourArray.push(["happy", "joy"]);
 ourArray.push("happy", "joy"); 
 // ourArray now equals ["Stimpson", "J", "cat", "happy", "joy"]
 ```
+### 7. 移出数组中最后一个元素
+.pop() 函数用来“抛出”一个数组末尾的值。我们可以把这个“抛出”的值赋给一个变量存储起来。  
+数组中任何类型的条目（数值，字符串，甚至是数组）可以被“抛出来” 。
+```js
+var ourArray = [1,2,3];
+var removedFromOurArray = ourArray.pop(); 
+// removedFromOurArray now equals 3, and ourArray now equals [1,2]
+```
+### 8. 移出第一个元素
+.shift()的工作原理就像 .pop()，但它移除的是第一个元素，而不是最后一个。
+### 9. 移入一个元素到数组的头部
+.unshift() 函数用起来就像 .push() 函数一样, 但不是在数组的末尾添加元素，而是在数组的头部添加元素。
+
+## Write Reusable JavaScript with Functions
+### 1. 函数
+```js
+function myFunction(){
+  console.log("Hi World");
+}
+myFunction();
+```
+### 2. 参数
+函数的参数parameters在函数中充当占位符(也叫形参)的作用，参数可以为一个或多个。  
+调用一个函数时所传入的参数为实参，实参决定着形参真正的值。简单理解：形参即形式、实参即内容。
+```js
+function ourFunction(a, b) {
+  console.log(a - b);
+}
+ourFunction(10, 5); // Outputs 5
+```
+### 3. 作用域
+在函数外定义的变量具有全局作用域。这意味着，具有全局作用域的变量可以在代码的任何地方被调用。
+
+这些没有使用var关键字定义的变量，会被自动创建在全局作用域中，形成全局变量。当在代码其他地方无意间定义了一个变量，刚好变量名与全局变量相同，这时会产生意想不到的后果。因此你应该总是使用var关键字来声明你的变量。
+
+```js
+var myGlobal=10;//不加var也是全局变量
+function fun1() {
+  oopsGlobal=5;//函数内不加var同样是全局变量
+}
+```
+在一个函数内声明的变量，以及该函数的参数都是局部变量，意味着它们只在该函数内可见。
+```js
+function myTest() {
+  var loc = "foo";
+  console.log(loc);
+}
+myTest(); // "foo"
+console.log(loc); // "undefined",在函数外，loc 是未定义的。
+```
+一个程序中有可能具有相同名称的 局部 变量 和 全局 变量。在这种情况下，局部 变量将会优先于 全局 变量。
+
+### 4. return传出数据
+我们可以把数据通过函数的 参数 来传入函数，也可以使用 return 语句把数据从一个函数中传出来。
+```js
+function plusThree(num) {
+  return num += 3;//错误示例  
+  return num + 3;
+}
+plusThree(5); // 错误示例 
+var answer = plusThree(5); // 8
+```
+## 队列
+新的条目会被加到 队列 的末尾，旧的条目会从 队列 的头部被移出。
+```js
+function queue(arr, item) {
+  // Your code here
+  arr.push(item);
+  item=arr[0];
+  arr.shift();
+  return item;  // Change this line
+}
+
+// Test Setup
+var testArr = [1,2,3,4,5];
+
+// Display Code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(queue(testArr, 6)); // Modify this line to test
+console.log("After: " + JSON.stringify(testArr));
+```

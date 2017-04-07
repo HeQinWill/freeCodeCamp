@@ -359,3 +359,46 @@ function isEqual(a,b) {
   return a === b;
 }
 ```
+## undefined问题
+当 JavaScript 中的变量被声明的时候，程序内部会给它一个初始值 undefined。当你对一个值为 undefined 的变量进行运算操作的时候，算出来的结果将会是 NaN，NaN 的意思是 "Not a Number"。当你用一个没有 定义 的变量来做字符串连接操作的时候，它会如实的输出"undefined"。  
+记住undefined，是一个关键字，而不是一个字符串。
+
+当代码执行到return语句时，函数返回一个结果就结束运行了，return后面的语句根本不会执行。
+```js
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();
+```
+上面的代码输出"Hello"到控制台、返回 "World"，但没有输出"byebye"，因为函数遇到return语句就退出了。  
+返回值也就是undefined
+## 21点算法
+[技术帖－21点算法](https://www.douban.com/note/273781969/)  
+它根据参数 card的值来递增或递减变量count，函数返回一个由当前count和 "Bet"(count>0)或"Hold"(count<=0) 拼接的字符串。
+```js
+var count = 0;
+
+function cc(card) {
+  // Only change code below this line
+  if(card>=2&&card<=6)
+    count++;
+  else if(card>=7&&card<=9)
+    count=count;
+    else
+      count--;
+  
+ if(count>0)
+    return count+" Bet";
+   else
+    return count+" Hold";
+  return "Change Me";
+  // Only change code above this line
+}
+
+// Add/remove calls to test your function.
+// 提示: Only the last will display
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+```
+## Build JavaScript Objects

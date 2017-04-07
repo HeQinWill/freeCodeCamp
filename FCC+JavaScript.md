@@ -124,3 +124,65 @@ firstLetterOfFirstName = firstName[0];
 理解字符串的不可变性！当你搞懂不可变性后immutable.js对于你就是小菜一碟了。
 
 在 JavaScript 中，字符串的值是不可变的，这意味着一旦字符串被创建就不能被改变。
+```js
+var myStr = "Bob";
+myStr[0] = "J";
+```
+是不会把变量 myStr 的值改变成 "Job" 的，因为变量 myStr 是不可变的。注意，这并不 意味着 myStr 永远不能被改变，只是字符串字面量 string literal 的各个字符不能被改变。改变 myStr 中的唯一方法是重新给它赋一个值，就像这样：
+```js
+var myStr = "Bob";
+myStr = "Job";
+```
+### 倒数第N个字符
+为了得到一个字符串的最后一个字符，你可以用[字符串的长度减去1]。
+```js
+var firstName = "Ada";
+var lastLetterOfFirstName = firstName[firstName.length - 1];
+```
+## 数组
+### 1. 创建一个包含 字符串 和 数字 的数组
+```js
+var array = ["John", 23];
+```
+### 2. 创建一个名为 myArray的多维数组
+```js
+var ourArray = [["the universe", 42], ["everything", 101010]];
+```
+### 3. 数组索引的使用与字符串索引一样，不同的是，通过字符串的索引得到的是一个字符，通过数组索引得到的是一个条目。  
+与字符串类似，数组也是 基于零 的索引，因此数组的第一个元素的索引是 0。
+```js
+var ourArray = [1,2,3];
+var ourData = ourArray[0]; // equals 1
+```
+REVIEW字符串的索引
+```js
+var firstLetterOfFirstName = "";
+var firstName = "Ada";
+firstLetterOfFirstName = firstName[0];
+```
+### 4. 与字符串的数据不可变不同，数组的数据是可变的，并且可以自由地改变。
+```js
+var ourArray = [1,2,3];
+ourArray[1] = 3; // ourArray now equals [1,3,3].
+```
+### 5. 多维数组
+可以把多维数组看作成是一个数组中的数组。当使用[ ]去访问数组的时候，第一个[index]访问的是第N个子数组，第二个[index]访问的是第N个子数组的第N个元素。
+```js
+var arr = [ [1,2,3],
+            [4,5,6],
+            [7,8,9],
+            [[10,11,12], 13, 14]
+          ];
+arr[0]; // 等于 [1,2,3]
+arr[1][2]; // 等于 6
+arr[3][0][1]; // 等于 11
+```
+### 6. 追加数据到数组末尾
+.push() 接受把一个或多个参数，并把它“推”入到数组的末尾。
+```js
+var ourArray = ["Stimpson", "J", "cat"];
+ourArray.push(["happy", "joy"]); 
+// ourArray now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
+ourArray.push("happy", "joy"); 
+// ourArray now equals ["Stimpson", "J", "cat", "happy", "joy"]
+```

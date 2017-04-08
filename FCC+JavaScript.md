@@ -402,3 +402,90 @@ function cc(card) {
 cc(2); cc(3); cc(7); cc('K'); cc('A');
 ```
 ## Build JavaScript Objects
+1. 对象和数组很相似，数组是通过索引来访问和修改数据，对象是通过属性来访问和修改数据的  
+对象适合用来存储结构化数据，就和真实世界的对象一模一样，比如一只猫。
+```js
+var cat = {
+  "name": "Whiskers",
+  //"name"="will";//错误示范
+  "legs": 4,
+  "tails": 1,
+  "enemies": ["Water", "Dogs"]//最后一个不用,
+};//最后的;别忘了
+```
+2. 有两种方式访问对象属性，一个是点操作符(.)，一个是中括号操作符([])。  
+```js
+var myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+var prop1val = myObj.prop1; // val1
+var prop2val = myObj.prop2; // val2
+```
+```js
+var myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock"
+};
+myObj["Space Name"]; // Kirk
+myObj['More Space']; // Spock
+```
+属性名称中如果有空格，必须把属性名称用单引号或双引号包裹起来。
+
+中括号操作符的另一个使用方式是用变量来访问一个属性。当你需要遍历对象的属性列表或查表时，这种方式极为有用。
+```js
+var myDog = "Hunter";
+var dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
+}
+var breed = dogs[myDog]; // "Hunter"
+console.log(breed)// "Doberman"
+```
+当我们通过变量名访问属性的时候，不需要给变量名包裹引号。因为实际上我们使用的是变量的值，而不是变量的名称。
+
+尝试理解其作用，就是我知道了一个属性，如myDog或playername，我需要知道一个属性名如Hunter或16，这样我直接有myDog或playername直接获取属性名对应的值
+```js
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+//使用变量playerNumber，通过中括号操作符找到testObj中的16。
+var playerNumber=16;    
+var player = testObj[playerNumber]; 
+```
+3. 用点操作符或中括号操作符来更新对象的属性
+```js
+ourDog.name = "Happy Camper";
+ourDog["name"] = "Happy Camper";//推荐用上面那种
+```
+4. 像更改属性一样给对象添加属性  
+原来可能没有这个属性，你可以把它当作有，直接写就行
+5. 删除对象的属性
+```js
+delete myDog.tails;
+```
+6. 对象和字典一样，可以用来存储键/值对。如果你的数据跟对象一样，你可以用对象来查找你想要的值，而不是使用switch或if/else语句。当你知道你的输入数据在某个范围时，这种查找方式极为有效。
+```js
+function phoneticLookup(val) {
+  var result = "";
+
+  // Only change code below this line
+  var lookup={
+    alpha:"Adams",
+    bravo:"Boston",
+    charlie:"Chicago",
+    delta:"Denver",
+    echo:"Easy",
+    foxtrot:"Frank"
+  };
+  result=lookup[val];//注意函数与对象的区别
+  // Only change code above this line
+  return result;
+}
+
+// Change this value to test
+phoneticLookup("charlie");
+```
